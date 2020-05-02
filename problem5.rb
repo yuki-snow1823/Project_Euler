@@ -18,7 +18,7 @@ while true
     arr.push(remainder)
   end
 
-  # 全て0であることを期待 
+  # 全て0であることを期待
 
   if arr.all? {|v| v == 0 } 
     p maxNumber
