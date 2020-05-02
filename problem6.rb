@@ -11,17 +11,17 @@ sumSquared = 0
 
 # 二乗の和
 while (i < 101) do
-  sumSquared += i * i
-  i += 1
+   sumSquared += i * i
+   i += 1
 end
 
 j = 1
 sumTotal = 0
 
 while (j < 101) do
-   sumTotal += j + j
+   sumTotal += j
    j += 1
 end
 
-# 和の二乗を引く
-p sumSquared - sumTotal * sumTotal
+# 和の二乗からひく
+p sumTotal * sumTotal - sumSquared
