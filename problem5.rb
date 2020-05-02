@@ -28,3 +28,13 @@ while true
   arr = []
   maxNumber +=1
 end
+
+
+# count = 1
+# while true
+#         num = 20 * count
+#         if num % 1 == 0 and num % 2 == 0 and num % 3 == 0 and num % 4 == 0 and num % 5 == 0 and num % 6 == 0 and num % 7 == 0 and num $
+#                 puts num
+#         end
+#         count += 1
+# end
