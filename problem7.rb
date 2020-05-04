@@ -7,31 +7,32 @@
 # 約数の個数が2つだけ
 
 num = 2 #数字
-divisor = 1 # 約数
+divide = 1 # 割る数
 divisorCount = 0 # 約数の個数
 primeNumbers = [] # 素数たち
 
 # 約数と約数の数を混ぜないように
 # whileだとtrueになるまでを表現できなさそう
 
-while primeNumbers.length == 13 do
+# untilを使う、条件を達成するまで繰り返す
+until primeNumbers.length == 10001 do
 
-  while divisor < num do
+  until divide > num do
 
-    if num % divisor == 0
-      divisor += 1
+    if num % divide == 0
       divisorCount += 1
     end
-    divisor += 1
-    
-  end
 
-  num += 1
+    divide += 1
+  end
 
   if divisorCount == 2
     primeNumbers.push(num)
-    divisorCount = 0
   end
+  
+  num += 1
+  divide = 1
+  divisorCount = 0
 end
 
-p primeNumbers
+p primeNumbers.last
