@@ -6,22 +6,32 @@
 
 # 約数の個数が2つだけ
 
-num = 0
-divisor = 0
-primeNumbers = []
+num = 2 #数字
+divisor = 1 # 約数
+divisorCount = 0 # 約数の個数
+primeNumbers = [] # 素数たち
+
+# 約数と約数の数を混ぜないように
+# whileだとtrueになるまでを表現できなさそう
 
 while primeNumbers.length == 13 do
 
-  while divisor == 2 do
+  while divisor < num do
 
     if num % divisor == 0
       divisor += 1
-    else
-      num += 1
+      divisorCount += 1
     end
-
+    divisor += 1
+    
   end
-  primeNumbers.push(primeNumber)
+
+  num += 1
+
+  if divisorCount == 2
+    primeNumbers.push(num)
+    divisorCount = 0
+  end
 end
 
 p primeNumbers
