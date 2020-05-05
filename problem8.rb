@@ -31,11 +31,23 @@ row =
 
 # 整数nから連続した13個を抽出する、総乗を比較して大きい部分を取り出す
 
-selected = row.slice(0..13).split("").map(&:to_i)
+total = 1
+n = 0 
+arr = []
 
-sum = 0
-selected.each do |i| 
-  sum *= i 
+until n == 1000
+  selected = row.gsub(/[\r\n]/,"").slice(n..12+n).split("").map(&:to_i)
+
+  selected.each do |i| 
+    total = total * i
+  end
+
+  arr.push(total)
+  n += 1
+  total = 1
 end
 
-puts sum
+p arr.max
+
+
+# gsub(/[\r\n]/,"").が大事
