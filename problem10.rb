@@ -13,8 +13,16 @@
 # 左:範囲が難しい、行で取得した時の 3<n n,n+1,n+2,n+3
 # 右:範囲が難しい、行で取得した時の n<17 n,n-1,n-2,n-3
 
+# 斜めは？
+
 # each_consメソッド
 # https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/each_cons.html
+
+# transposeメソッド（列と行を入れ替える）
+# https://docs.ruby-lang.org/ja/latest/method/Array/i/transpose.html
+
+# each_with_indexで引数を使うという意味
+# https://qiita.com/jnchito/items/2b909a3d75728f99bbbe
 
 numbers = '08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -51,4 +59,39 @@ numbers_array.each do |row|
     results_array << result
   end
 end
-p results_array
+
+# up, down
+transpose_table = numbers_array.transpose
+transpose_table.each do |row|
+  row.each_cons(4) do |four_numbers|
+    result = four_numbers.inject(:*)
+    # 上で使用したものの中にさらに追加する
+    results_array << result
+  end
+end
+
+
+# 斜めについて（解いた人のブログを参考にしました）
+def diagonally_right_down_array(numbers_array:, row:, column:)
+  # 4回newする
+  # 右下に下がっていくイメージ、一行した、一つ右
+  Array.new(4){ |i| numbers_array[row + i][column + i] }
+end
+
+def diagonally_right_up_array(numbers_array:, row:, column:)
+  Array.new(4){ |i| numbers_array[row - i][column + i] }
+end
+
+# diagonally
+numbers_array.each.with_index(0) do |row, i|
+  row.each.with_index(0) do |number, j|
+    if i <= 16 && j <= 16
+      results_array << diagonally_right_down_array(numbers_array: numbers_array, row: i, column: j).inject(:*) 
+    end 
+    
+    if i >= 3 && j <= 16
+      results_array << diagonally_right_up_array(numbers_array: numbers_array, row: i, column: j).inject(:*)
+    end
+  end
+end
+p results_array.max
