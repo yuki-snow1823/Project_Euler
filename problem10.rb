@@ -95,3 +95,20 @@ numbers_array.each.with_index(0) do |row, i|
   end
 end
 p results_array.max
+
+
+# # ななめ(右下の計算)
+# diag = 1
+# numbers.each.with_index do |row, i|
+#   row.each.with_index do |number, j|
+#     if i <= 16 && j <= 16
+#       4.times do |k|
+#         diag = numbers[i + k][j + k] * diag
+#       end
+#       result.push(diag)
+
+#       # 初期化
+#       diag = 1
+#     end
+#   end
+# end
