@@ -7,9 +7,26 @@
 # まず三角数自体を表す
 # 約数の求め方、法則を導き出す
 # 500個の場合を求める
+# 76576500になるらしい
+
+def divide(num)
+  total = 0
+  for i in 1..num+1 do
+      d = num%i
+      if d == 0 
+        total += 1
+      end
+  end
+  return total
+end
 
 i = 0
-while i < 10 do
+many = 0
+while many < 501 do
   i +=1
-  p (1..i).to_a.sum
+  total = (1..i).to_a.sum
+  many = divide(total)
+  if many > 500
+    p total
+  end
 end
