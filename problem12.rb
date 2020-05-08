@@ -30,3 +30,22 @@ while many < 501 do
     p total
   end
 end
+
+# 答えの改善
+# http://blog.livedoor.jp/guratan__/archives/3878473.html
+# どちらにせよprimeメソッドはあった方がよさそう
+
+# def divide(num)
+#   total = 0
+#   # それ自体の半分の数までしか増やさない。なぜなら、#2
+#   for i in 1..num/2 do
+#       d = num%i
+#       if d == 0 
+#         total += 1
+#       end
+#   end
+#   #2 個数は、約数の半分までとそいつ自体と考えた方が計算が少なくなるから
+#   return total+1
+# end
+
+# ファイルにこ使う：http://tvarley.github.io/blog/euler/ruby/problem_012
