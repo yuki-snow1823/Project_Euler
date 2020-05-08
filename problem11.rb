@@ -112,3 +112,25 @@ p results_array.max
 #     end
 #   end
 # end
+
+num = gets.split(" ").map(&:to_i)
+m = num[0]
+n = num[1]
+
+bottom = (1..m-1).to_a
+height = (1..n-1).to_a
+o = Math.sqrt((m**2+n**2)).round
+hypotenuse = (1..o).to_a
+count = 0
+bottom.each do |btm|
+    height.each do |hit|
+        hypotenuse.each do |hte|
+            if btm**2 + hit**2 == hte**2
+                count +=1
+            end
+        end
+    end
+end
+
+
+p count
