@@ -119,3 +119,15 @@ for num in 1..count
   arr << gets.to_i
 end
 puts arr.sum.to_s[0, 10]
+
+
+# 他の人の答え（Fileクラスを使うパターン）
+
+sum = 0
+File.open('number.txt') do |numbers|
+  numbers.each_line do |line|
+    sum += line.to_i
+  end
+end
+
+puts sum.to_s[0..9]
