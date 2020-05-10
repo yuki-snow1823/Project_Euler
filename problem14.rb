@@ -17,18 +17,25 @@ n → 3n + 1 (n が奇数)
 
 
 def calc(number)
+  sequence = []
   until number == 1 do
     if number.even?
       while number.even?
       number = number / 2
-      p number
+      sequence << number
       end
     else
       number = 3 * number + 1  
-      p number
+      sequence << number
     end
   end
-  number
+  sequence
 end
 
-p calc(5)
+answer = []
+(1..10).each do |i|
+ answer = calc(i) if answer.length < calc(i).length
+ # これだと答えが複数でない
+end
+
+p answer
