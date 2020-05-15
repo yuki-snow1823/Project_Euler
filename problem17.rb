@@ -19,3 +19,11 @@ twenty_head = "twenty".length
 twenty_to_twenty_nine = twenty_head + twenty_head * 9 + one_to_nine
 
 # あと組み合わせていくこと？
+
+
+# 回答例 こんなジェムもある
+# require 'humanize'
+
+# p (1..1000).to_a.map(&:humanize).join.tr(" -", "").size
+
+# https://mon-sele.com/post43/
