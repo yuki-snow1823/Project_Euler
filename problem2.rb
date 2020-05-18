@@ -33,7 +33,7 @@ end
 
 # 答え
 
-sum = 0
+
 n1, n2 = 1, 2
 sequence = []
 sequence.push(n1, n2)
@@ -41,14 +41,17 @@ sequence.push(n1, n2)
 
 next_number = n1+n2
 
+# フィボナッチ数列を入れまくる
 begin
   sequence << next_number
-  n1 = n2
+  n1 = n2 # 上の定義に影響及ぼす
   n2 = next_number
   next_number = n1+n2
 end while next_number < 4000000
 
 # 偶数を足せ
+# 答えの初期化
+sum = 0
 sequence.each do |number|
   if(number%2 == 0)
     sum += number
