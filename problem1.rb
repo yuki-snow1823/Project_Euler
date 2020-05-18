@@ -18,7 +18,6 @@
 # p "約数の合計：" 
 
 variable = 1000
-
 answer = 0
 
 for num in 1..variable -1
