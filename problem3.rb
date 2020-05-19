@@ -16,6 +16,7 @@ def largest_prime_factor(number)
   largest_prime_factor = 0
 
   #入力された数までiを増やしていく
+  #自動で素因数分解するイメージ
   while i < number 
     if number % i == 0
       largest_prime_factor = i
@@ -23,6 +24,7 @@ def largest_prime_factor(number)
       # 毎回2を入れれば自然に増える
       i = 2
     else
+      # 何度もここを通過させる
       i += 1
     end
   end
