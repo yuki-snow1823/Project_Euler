@@ -9,9 +9,18 @@
 result = File.open("./names.txt")
 
 lines = []
-
 result.each_line do |line|
   lines << line.delete("\"")
 end
 # 番目、だから結果は+1すること
-p lines[0].split(",").to_a.sort.index("COLIN")
+data = lines[0].split(",").to_a.sort
+
+answer = []
+# 文字コード-64が「番」になりそう
+data.each_with_index do |name,index|
+  score = 0
+  name.split("").each{|n| score += (n.ord - 64) }
+  answer << score * (index + 1)
+end
+
+p answer.sum == 871198282
