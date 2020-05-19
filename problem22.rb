@@ -24,3 +24,22 @@ data.each_with_index do |name,index|
 end
 
 p answer.sum == 871198282
+
+# 他の人の解答
+def names
+  # String#scanメソッドの引数に半角英数字を指定して名前の配列を作成します。
+  File.open('names.txt').read.scan(/\w+/).sort
+end
+
+# charsでもバラバラにできる
+def score_of_name(name, index)
+  worth = name.chars.map { |alphabet| alphabet.ord - 64 }.inject(:+)
+  worth * index
+end
+
+answer = 0
+names.each.with_index(1) do |name, index|
+  answer += score_of_name(name, index)
+end
+puts answer
+#=> 871198282
