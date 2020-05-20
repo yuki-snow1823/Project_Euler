@@ -8,7 +8,6 @@
 
 i = 1 
 sumSquared = 0
-
 # 二乗の和
 while (i < 101) do
    sumSquared += i * i
@@ -17,7 +16,6 @@ end
 
 j = 1
 sumTotal = 0
-
 while (j < 101) do
    sumTotal += j
    j += 1
