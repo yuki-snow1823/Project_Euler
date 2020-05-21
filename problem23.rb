@@ -30,10 +30,62 @@ end
 
 # 過剰数を求める
 over_number = []
-(1..100).to_a.each do |num|
+(1..12000).to_a.each do |num|
   if divide(num).sum > num
     over_number << num
   end
 end
 
-p over_number.repeated_combination(2).to_a.map{|x| x[0] + x[1]}
+over_number_combi = over_number.repeated_combination(2).to_a.map{|x| x[0] + x[1]}
+p over_number_combi.max
+arr = (1..200).to_a
+
+arr.delete_if do |item|
+  over_number_combi.include?(item)
+end
+p arr
+
+
+# include Math
+# require 'mathn'
+
+# def rui(i,j)
+# 	beki=1
+# 	sum=1
+# 	for k in 1..j
+# 		beki=beki*i
+# 		sum=sum+beki
+# 	end
+# 	return sum
+# end
+
+# kajo=Array.new
+# for i in 1..28122 do
+# sum = 1
+# 	pq = i.prime_division
+# 	pq.each do |tes|
+# 		sum*=rui(tes[0],tes[1])
+# 	end
+# 	if sum>i*2
+# 			kajo<<i
+# 		end
+# end
+
+# kajo2=kajo
+# wa = Array.new
+# kajo.each do |tes1|
+# 	kajo2.each do |tes2|
+# 		if (tes1+tes2)<28123
+# 		wa[tes1+tes2]=1
+# 		end
+# 	end
+# end
+# i=0
+# ans=0
+# wa.each do|ktkr|
+# 	if !ktkr
+# 	ans=ans+i
+# 	end
+# i=i+1
+# end
+# p ans
