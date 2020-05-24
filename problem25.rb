@@ -42,5 +42,11 @@ fib = [1,1]
 i = 1; n = ""
 
 until n.length == 1000 do
-  n = (fib[i] + fib[])
+  n = (fib[i] + fib[i-1]).to_s
+  if (n.length < 1000)
+    fib.push((n).to_i)
+  end
+  i+= 1
 end
+
+puts (i+1)
