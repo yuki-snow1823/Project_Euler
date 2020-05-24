@@ -21,10 +21,26 @@
 
 # まず普通にフィボナッチの項を求める配列を書く
 
-def fibonacchi(num)
-  return 1 if num == 1
-  return 1 if num == 2
-  return fibonacchi(num - 1) + fibonacchi(num - 2)
-end
+# def fibonacchi(num)
+#   return 1 if num == 1
+#   return 1 if num == 2
+#   return fibonacchi(num - 1) + fibonacchi(num - 2)
+# end
 
-fibonacchi(12)
+# i = 1
+# data = 0
+# answer = []
+# until data >= 100000000 do
+#   i += 1
+#   answer << fibonacchi(i)
+#   data = answer.last
+# end
+
+# p answer.size + 1
+
+fib = [1,1]
+i = 1; n = ""
+
+until n.length == 1000 do
+  n = (fib[i] + fib[])
+end
