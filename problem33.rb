@@ -55,3 +55,29 @@ end
 answer.each do |i|
   p i
 end
+
+
+require 'mathn'
+
+ans = 1 
+        
+# # Denominator is 2 digit.
+# 10.upto(99) do |denominator|                           
+#     # To avoid division by zero.
+#     next if denominator % 10 == 0
+#     # Numerator is 2 digit and less than Denominator.
+#     10.upto(denominator-1) do |numerator|
+#         fraction1 = numerator / denominator
+#         fraction2 = 0     
+#         # When you require 'mathn', "Integer / Integer" is not Integer but Fraction.
+#         # If you want to Integer, you should be Fraction#to_i.
+#         if (denominator % 10) == (numerator / 10).to_i  
+#             fraction2 = (numerator % 10) / (denominator / 10).to_i
+#         elsif (denominator / 10).to_i == (numerator % 10)
+#             fraction2 = (numerator / 10).to_i / (denominator % 10)
+#         end                                             
+#         ans *= fraction1 if fraction1 == fraction2      
+#     end                                                 
+# end                                                     
+                                                      
+# p ans.to_s
