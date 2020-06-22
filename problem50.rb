@@ -9,15 +9,17 @@
 
 require "prime"
 
-p prime_numbers_array =  Prime.each(73).to_a.sum
+p prime_numbers_array =  Prime.each(100).to_a
 
-# answer,answer_array = 0,[]
+answer,answer_array = 0,[]
 
-# prime_numbers_array.each do |i|
-#   answer += i
-#   answer_array << answer
-#   break if answer_array.last > 1000
-# end
-# p answer_array
+prime_numbers_array.each do |i|
+  answer += i
+  answer_array << answer
+  break if answer_array.last > 1000
+end
 
-# p 568 + 71
+p answer_array
+
+# 別に開始地点は「２」じゃなくてもいいからこれだとずれる。
+# 2,5,10の10を引けば連続しているし、953は素数
